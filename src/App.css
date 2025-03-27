@@ -1,0 +1,61 @@
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #4CAF50aa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #4CAF50aa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #4CAF50;
+}
+
+/* Enhanced green gradients */
+.green-gradient-bg {
+  background: linear-gradient(135deg, #e8f5e9 0%, #a5d6a7 100%);
+}
+
+.dark-green-gradient-bg {
+  background: linear-gradient(135deg, #1b5e20 0%, #388e3c 100%);
+}
+
+.green-gradient-card {
+  background: linear-gradient(135deg, #2e7d32 0%, #388e3c 100%);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.results-anchor {
+  scroll-margin-top: 2rem;
+}
