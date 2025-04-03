@@ -8,6 +8,9 @@ import os
 
 app = Flask(__name__)
 CORS(app)
+@app.route("/")
+def home():
+    return "rice api is running"
 
 def load_tflite_model(model_path):
     try:
