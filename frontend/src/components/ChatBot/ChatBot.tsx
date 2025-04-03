@@ -141,7 +141,7 @@ const ChatBot = () => {
   ]);
   const [showSuggestions, setShowSuggestions] = useState(true);
   const [isTyping, setIsTyping] = useState(false);
-  
+  const [showPopup, setShowPopup] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
@@ -150,6 +150,17 @@ const ChatBot = () => {
       chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
     }
   }, [chatHistory]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowPopup(true);
+      setTimeout(() => setShowPopup(false), 3000);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+
 
   useEffect(() => {
     if (isOpen && inputRef.current) {
@@ -196,6 +207,17 @@ const ChatBot = () => {
 
   return (
     <>
+
+{showPopup && (
+  <motion.div
+    className="fixed bottom-20 right-5 bg-green-600 text-white p-2 rounded shadow-md text-sm"
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: 10 }}
+  >
+    Rice Disease Inquiry
+  </motion.div>
+)}
       <motion.button
         className="fixed right-5 bottom-5 w-14 h-14 rounded-full bg-gradient-to-r from-green-600 to-green-700 text-white shadow-lg flex items-center justify-center z-50 border-2 border-white/30"
         whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0,0,0,0.2)" }}
