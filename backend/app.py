@@ -47,7 +47,7 @@ def run_inference(interpreter, input_data):
         print(f"Error during inference: {e}")
         return None
 
-@app.route('/predict', methods=['POST'])
+@app.route('/', methods=['POST'])
 def predict():
     if "image" not in request.files:
         return jsonify({"error": "No image provided"}), 400
