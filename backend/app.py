@@ -47,6 +47,10 @@ def run_inference(interpreter, input_data):
         print(f"Error during inference: {e}")
         return None
 
+@app.route("/", methods=["GET"])
+def index():
+    return "Rice Disease Detection Backend is Running ✅", 200
+
 @app.route('/', methods=['POST'])
 def predict():
     if "image" not in request.files:
