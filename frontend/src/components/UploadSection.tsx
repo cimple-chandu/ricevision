@@ -70,6 +70,7 @@ const handleClearImage = () => {
                 body: formData,
             });
 
+            // const response = await fetch("http://127.0.0.1:10000//",
             if (!response.ok) throw new Error("Failed to analyze image");
 
             const data = await response.json();
