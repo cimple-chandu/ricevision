@@ -65,7 +65,7 @@ const handleClearImage = () => {
         formData.append("image", selectedFile);
 
         try {
-            const response = await fetch("https://ricevision.onrender.com/", {
+            const response = await fetch("https://ricevision-2.onrender.com/", {
                 method: "POST",
                 body: formData,
             });
@@ -142,31 +142,34 @@ const handleClearImage = () => {
                             </div>
 
                             {previewImage && (
-                                <div className="mt-6 flex justify-center gap-4">
-                                    <motion.button
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.2 }}
-                                    >
-                                        <Button onClick={sendImageToBackend} disabled={loading}>
-                                            {loading ? "Analyzing..." : "Analyze Image"}
-                                        </Button>
-                                    </motion.button>
-                                    
-                                    <motion.button
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.2, delay: 0.1 }}
-                                    >
-                                        <Button onClick={handleClearImage} variant="destructive">
-                                            Clear Image
-                                        </Button>
-                                    </motion.button>
-                                </div>
+                              <div className="mt-6 flex justify-center gap-4">
+                              <motion.button
+                                  whileHover={{ scale: 1.05 }}
+                                  whileTap={{ scale: 0.95 }}
+                                  initial={{ opacity: 0, y: 10 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  transition={{ duration: 0.2 }}
+                                  className="p-4" // Add padding outside the button
+                              >
+                                  <Button onClick={sendImageToBackend} disabled={loading} className="px-6 py-2">
+                                      {loading ? "Analyzing..." : "Analyze Image"}
+                                  </Button>
+                              </motion.button>
+                              
+                              <motion.button
+                                  whileHover={{ scale: 1.05 }}
+                                  whileTap={{ scale: 0.95 }}
+                                  initial={{ opacity: 0, y: 10 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  transition={{ duration: 0.2, delay: 0.1 }}
+                                  className="p-4" // Add padding outside the button
+                              >
+                                  <Button onClick={handleClearImage} variant="destructive" className="px-6 py-2">
+                                      Clear Image
+                                  </Button>
+                              </motion.button>
+                          </div>
+                          
                             )}
                         </Card>
                     </motion.div>
