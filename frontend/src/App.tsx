@@ -8,7 +8,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ResultsDisplay from "./components/ResultsDisplay"; // Import ResultsPage
-
+import InstallPWA from "./pages/InstallPWA";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -25,6 +25,7 @@ const App = () => (
                     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                     <Route path="*" element={<NotFound />} />
                 </Routes>
+                <InstallPWA />
             </BrowserRouter>
         </TooltipProvider>
     </QueryClientProvider>
