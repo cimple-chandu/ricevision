@@ -1,20 +1,35 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { DownloadCloud } from 'lucide-react' // icon from Lucide
 
 const InstallPWA = () => {
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null)
   const [showInstall, setShowInstall] = useState(false)
 
+  const isAppInstalled = (): boolean => {
+    return (
+      window.matchMedia('(display-mode: standalone)').matches ||
+      (navigator as any).standalone === true ||
+      document.referrer.startsWith('android-app://')
+    )
+  }
+
   useEffect(() => {
-    const handler = (e: Event) => {
+    const handler = (e: any) => {
       e.preventDefault()
       setDeferredPrompt(e)
-      setShowInstall(true)
+      setShowInstall(!isAppInstalled())
     }
 
     window.addEventListener('beforeinstallprompt', handler)
 
-    return () => window.removeEventListener('beforeinstallprompt', handler)
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handler)
+    }
+  }, [])
+
+  useEffect(() => {
+    setShowInstall(!isAppInstalled())
   }, [])
 
   const installApp = async () => {
@@ -23,11 +38,11 @@ const InstallPWA = () => {
       const choice = await deferredPrompt.userChoice
       if (choice.outcome === 'accepted') {
         console.log('✅ App installed')
+        setShowInstall(false)
       } else {
         console.log('❌ User dismissed the install prompt')
       }
       setDeferredPrompt(null)
-      setShowInstall(false)
     }
   }
 
@@ -36,22 +51,24 @@ const InstallPWA = () => {
       {showInstall && (
         <motion.button
           onClick={installApp}
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{
             opacity: 1,
-            x: 0,
-            y: [0, -10, 0], // Jumping keyframe
+            scale: 1,
+            rotate: [0, -10, 10, 0],
           }}
-          exit={{ opacity: 0, x: -50 }}
+          exit={{ opacity: 0, scale: 0.9 }}
           transition={{
-            duration: 1,
+            duration: 1.5,
+            ease: 'easeInOut',
             repeat: Infinity,
             repeatType: 'loop',
-            ease: 'easeInOut',
           }}
-          className="fixed bottom-4 left-4 z-50 bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded-xl shadow-lg"
+          className="fixed bottom-5 left-13 z-50 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-xl"
+
+          title="Install App"
         >
-          Install App
+          <DownloadCloud className="w-6 h-6" />
         </motion.button>
       )}
     </AnimatePresence>
