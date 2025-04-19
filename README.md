@@ -14,7 +14,7 @@ A native mobile app and progressive web application (PWA) have been developed to
 - 🤖 Detect rice diseases using deep learning models
 - 🔗 Ensemble learning for highly accurate predictions (99%)
 - 📊 Real-time disease classification into 10 categories
-- 🌐 Deployed as both native mobile app and PWA
+- 🌐 Deployed as both native mobile app and PWA with offline support for frontend
 - 💬 AI-powered chatbot for assistance and disease info
 - 📱 User-friendly interface for farmers and agriculture experts
 
@@ -65,7 +65,7 @@ The web app includes an intelligent chatbot that:
 - React + Vite
 - TypeScript
 - Tailwind CSS
-- PWA (via Capacitor/Expo)
+- PWA (via Capacitor/Expo) (offline support for frontend)
 
 ### Backend
 - Python Flask (REST API)
@@ -78,7 +78,6 @@ The web app includes an intelligent chatbot that:
 
 ## 🧱 System Architecture
 
-```plaintext
 User Input (Image)
        ↓
 Frontend (React + TS)
@@ -113,5 +112,5 @@ This project is licensed under the ricevision License.
 ## 🙏 Acknowledgements
 
 - Kaggle for the Rice Leaf Dataset
-- ChatGPT, Gemini, Google Colab, VS Code, Lovable, GitHub
+- ChatGPT, Gemini, Google Colab, VS Code, Lovable, GitHub, Render, Vercel...
 
