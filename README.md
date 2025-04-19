@@ -94,8 +94,8 @@ Result (Disease Class + Advice)
 ## 🛠️ How to Run Locally
 
 ### Frontend
-cd frontend
-npm run dev
+-cd frontend
+-npm run dev
 
 
 ### Backend
