@@ -35,22 +35,22 @@ const Footer: FC = () => {
               Helping farmers identify and treat crop issues early.
             </p>
             <div className="flex items-center gap-2">
-              <Button
-                variant="outline"
-                size="sm"
-                className="border-green-600 text-green-400 hover:bg-green-900/20 hover:text-green-300 h-8 px-3"
-              >
-                <Github className="w-3.5 h-3.5 mr-1.5" />
-                GitHub
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="border-green-600 text-green-400 hover:bg-green-900/20 hover:text-green-300 h-8 px-3"
-              >
-                <ExternalLink className="w-3.5 h-3.5 mr-1.5" />
-                API
-              </Button>
+            <a
+  href="https://github.com/saichandugedela/ricevision"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button
+    variant="outline"
+    size="sm"
+    className="border-green-600 text-green-400 hover:bg-green-900/20 hover:text-green-300 h-8 px-3"
+  >
+    <Github className="w-3.5 h-3.5 mr-1.5" />
+    GitHub
+  </Button>
+</a>
+
+           
             </div>
           </div>
           
@@ -106,29 +106,49 @@ const Footer: FC = () => {
             <h4 className="text-sm font-semibold mb-3 text-white">Resources</h4>
             <ul className="space-y-2">
               <li>
-                <a href="https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/rice-diseases" className="text-sm text-gray-300 hover:text-green-400 transition-colors flex items-center">
+              <a
+                  href="https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=rice+disease+detection+using+deep+learning&oq=rice+disease+detection+"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-300 hover:text-green-400 transition-colors flex items-center"
+                >
                   <ChevronRight className="h-3 w-3 mr-1" />
                   Research
                 </a>
+
               </li>
               <li>
-                <a href="https://www.irri.org/rice-diseases" className="text-sm text-gray-300 hover:text-green-400 transition-colors flex items-center">
-                  <ChevronRight className="h-3 w-3 mr-1" />
-                  Best Practices
-                </a>
+              <a
+  href="https://veeroverseas.com/quality-rice-export-best-practices-and-customer-feedback-importance/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-sm text-gray-300 hover:text-green-400 transition-colors flex items-center"
+  title="Best practices in rice export and importance of customer feedback"
+>
+  <ChevronRight className="h-3 w-3 mr-1" />
+  Best Practices
+</a>
+
               </li>
               <li>
-                <a href="https://www.fao.org/agriculture/crops/thematic-sitemap/theme/pests/ipm/en/" className="text-sm text-gray-300 hover:text-green-400 transition-colors flex items-center">
-                  <ChevronRight className="h-3 w-3 mr-1" />
-                  Farming Tips
-                </a>
+              <a
+  href="https://eos.com/blog/how-to-grow-rice/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-sm text-gray-300 hover:text-green-400 transition-colors flex items-center"
+  title="External guide on how to grow rice by EOS"
+>
+  <ChevronRight className="h-3 w-3 mr-1" />
+  Farming Tips
+</a>
+
               </li>
-              <li>
+              {/* <li>
                 <a href="/privacy" className="text-sm text-gray-300 hover:text-green-400 transition-colors flex items-center">
                   <ChevronRight className="h-3 w-3 mr-1" />
                   Privacy
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
           
@@ -161,13 +181,13 @@ const Footer: FC = () => {
             © {currentYear} Rice Vision. All rights reserved.
           </p>
           <div className="flex gap-5 mt-2 md:mt-0">
-            <a href="/privacy" className="text-gray-400 hover:text-green-400 transition-colors">
+            <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
               Privacy
             </a>
-            <a href="/terms" className="text-gray-400 hover:text-green-400 transition-colors">
+            <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
               Terms
             </a>
-            <a href="/faq" className="text-gray-400 hover:text-green-400 transition-colors">
+            <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
               FAQ
             </a>
           </div>
