@@ -4,7 +4,7 @@ Rice is a staple crop vital for food security. Early disease detection reduces y
 
 A native mobile app and progressive web application (PWA) have been developed to provide real-time, accessible disease identification for farmers, contributing to precision agriculture and better crop management.
 
-🌐 [Live Website](https://ricevision.vercel.com)
+🌐 [Live Website](https://ricevision.vercel.app)
 
 ---
 
